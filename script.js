@@ -5,17 +5,15 @@ function compute()
     var years = document.getElementById("years").value;
     var interest = principal * years * rate/100;
 
-    var finalAmount = parseInt(principal) + parseInt(interest);
-
     // gets the current year and adds the additional years
     var year = new Date().getFullYear() + parseInt(years);
 
     // display result on the page
     var computed_result = document.getElementById("result")
-    computed_result.innerText = "If you deposit "+principal+",\n"+
-        "at an interest rate of "+rate+"%.\n"+
-        "You will receive an amount of "+finalAmount+",\n"+
-        "in the year "+year
+    computed_result.innerHTML = "If you deposit <mark>"+principal+"</mark>,<br/>"+
+        "at an interest rate of <mark>"+rate+"%</mark>.<br/>"+
+        "You will receive an amount of <mark>"+interest+"</mark>,<br/>"+
+        "in the year <mark>"+year+"</mark>"
 
 }
 
