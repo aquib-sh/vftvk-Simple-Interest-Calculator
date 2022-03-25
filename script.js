@@ -2,17 +2,12 @@ function compute()
 {
     var principal = document.getElementById("principal").value;
 
-    if (principal == "") {
-        alert("You have entered an empty value, please enter a positive value");
+    if (inputIssue(principal)) {
         document.getElementById("principal").focus();
         return;
     }
 
-    if (parseInt(principal) < 0) {
-        alert("You have entered a negative value, please enter a positive value");
-        document.getElementById("principal").focus();
-        return;
-    }
+    document.getElementById("principal").focus();
 
     var rate = document.getElementById("rate").value;
     var years = document.getElementById("years").value;
@@ -28,6 +23,25 @@ function compute()
         "You will receive an amount of <mark>"+interest+"</mark>,<br/>"+
         "in the year <mark>"+year+"</mark>"
 
+}
+
+function inputIssue(principal) {
+    var problem = false;
+    if (principal == "") {
+        alert("You have entered an empty value, please enter a positive value");
+        problem = true;
+    }
+
+    else if (parseInt(principal) < 0) {
+        alert("You have entered a negative value, please enter a positive value");
+        problem = true;
+    }
+
+    else if (parseInt(principal) == 0) {
+        alert("You have entered zero, please enter a positive value");
+        problem = true;
+    }
+    return problem
 }
 
 function updateRate()
