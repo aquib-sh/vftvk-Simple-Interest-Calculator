@@ -3,8 +3,13 @@ function compute()
     var principal = document.getElementById("principal").value;
 
     if (principal == "") {
-        alert("You have entered an empty value");
-        return
+        alert("You have entered an empty value, please enter a positive value");
+        return;
+    }
+
+    if (parseInt(principal) < 0) {
+        alert("You have entered a negative value, please enter a positive value");
+        return;
     }
 
     var rate = document.getElementById("rate").value;
