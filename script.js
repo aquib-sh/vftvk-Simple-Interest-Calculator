@@ -4,11 +4,13 @@ function compute()
 
     if (principal == "") {
         alert("You have entered an empty value, please enter a positive value");
+        document.getElementById("principal").focus();
         return;
     }
 
     if (parseInt(principal) < 0) {
         alert("You have entered a negative value, please enter a positive value");
+        document.getElementById("principal").focus();
         return;
     }
 
